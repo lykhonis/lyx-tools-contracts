@@ -1,0 +1,15 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+# solidity compiler
+solc = "0.8.17"
+
+# Increase optimizer_runs
+optimizer = true
+optimizer-runs = 1_000
+
+[fuzz]
+# Fuzz more than the default 256
+runs = 1_000
