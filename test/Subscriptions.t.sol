@@ -49,7 +49,7 @@ contract SubscriptionsTest is Test {
         assertEq(authority, subscriptions.authority());
     }
 
-    function testFuzz_purchase(
+    function testFuzz_Purchase(
         address subscriber,
         uint256 price,
         uint256 durationSeconds
