@@ -2,6 +2,7 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+extra_output_files = ["metadata"]
 
 # solidity compiler
 solc = "0.8.17"

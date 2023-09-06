@@ -61,7 +61,18 @@ contract Configure is Script {
             payable(vm.envAddress("CONTRACT_SUBSCRIPTIONS_ADDRESS"))
         );
 
-        vm.broadcast(owner);
-        subscriptions.withdraw(beneficiary, address(subscriptions).balance);
+        uint256 balance = address(subscriptions).balance;
+        if (balance > 0) {
+            console.log(
+                string.concat(
+                    "Withdrawing ",
+                    Strings.toString(balance),
+                    " to ",
+                    Strings.toHexString(beneficiary)
+                )
+            );
+            vm.broadcast(owner);
+            subscriptions.withdraw(beneficiary, balance);
+        }
     }
 }
